@@ -1,11 +1,7 @@
-import TeacherDashboard from './teacher-dashboard/TeacherDashboard.jsx'
-
-const App = () => {
-  return (
-    <>
-      <TeacherDashboard />
-    </>
-  )
+import React from "react";
+import NonTeachDashboard from "./non-teaching-dashboard/NonTeachDashboard";
+function App() {
+    return <NonTeachDashboard />;
 }
 
-export default App
+export default App;
