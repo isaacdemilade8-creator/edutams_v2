@@ -24,16 +24,22 @@ const engagementData = [
   { key: "Videos Created", short: "Videos", value: 78, count: 12, color: "#e11d48", icon: PlayCircleOutlineOutlinedIcon },
 ];
 
-function ChartPanel({ title, right, children }) {
+function ChartPanel({ title, right, children, accentColor }) {
   return (
     <Box
       sx={{
         bgcolor: "#fff",
-        border: "1px solid",
-        borderColor: "grey.200",
+        border: "1.5px solid",
+        borderColor: accentColor || "grey.200",
         borderRadius: 3,
-        p: 2.25,
+        p: 1.8,
         height: "100%",
+        minHeight: 310,
+        transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
+        "&:hover": {
+          transform: "translateY(-2px)",
+          boxShadow: "0 8px 18px rgba(15, 23, 42, 0.05)",
+        },
       }}
     >
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1.25 }}>
@@ -51,6 +57,7 @@ function PerformanceChart() {
   return (
     <ChartPanel
       title="Class Performance Overview"
+      accentColor="#16a34a"
       right={
         <FormControl size="small">
           <Select
@@ -65,7 +72,7 @@ function PerformanceChart() {
       }
     >
       <LineChart
-        height={242}
+        height={190}
         series={performanceSeries.map((s) => ({
           id: s.id,
           label: s.label,
@@ -93,16 +100,16 @@ function PerformanceChart() {
             tickSize: 0,
           },
         ]}
-        margin={{ left: 30, right: 8, top: 10, bottom: 26 }}
+        margin={{ left: 22, right: 8, top: 10, bottom: 18 }}
         grid={{ vertical: false, horizontal: true }}
         slotProps={{
           legend: {
             direction: "row",
             position: { vertical: "top", horizontal: "start" },
             padding: 0,
-            itemMarkWidth: 8,
-            itemMarkHeight: 8,
-            labelStyle: { fontSize: 11, fill: "#475569" },
+            itemMarkWidth: 7,
+            itemMarkHeight: 7,
+            labelStyle: { fontSize: 10.5, fill: "#475569" },
           },
         }}
       />
@@ -112,9 +119,9 @@ function PerformanceChart() {
 
 function EngagementChart() {
   return (
-    <ChartPanel title="Teaching Engagement" right={<Typography sx={{ fontSize: 12, color: "text.secondary" }}>This Term</Typography>}>
+    <ChartPanel title="Teaching Engagement" accentColor="#7c3aed" right={<Typography sx={{ fontSize: 12, color: "text.secondary" }}>This Term</Typography>}>
       <BarChart
-        height={176}
+        height={138}
         series={engagementData.map((d) => ({
           id: d.key,
           label: d.short,
@@ -139,20 +146,20 @@ function EngagementChart() {
             tickSize: 0,
           },
         ]}
-        margin={{ left: 28, right: 8, top: 8, bottom: 24 }}
+        margin={{ left: 20, right: 8, top: 8, bottom: 18 }}
         grid={{ vertical: false, horizontal: true }}
         borderRadius={6}
         slotProps={{ legend: { hidden: true } }}
       />
-      <Grid container spacing={1} sx={{ mt: 0.5 }}>
+      <Grid container spacing={0.75} sx={{ mt: 0.25 }}>
         {engagementData.map((d) => {
           const Icon = d.icon;
           return (
             <Grid key={d.key} size={3}>
               <Stack alignItems="center" spacing={0.25}>
-                <Icon sx={{ fontSize: 16, color: d.color }} />
-                <Typography sx={{ fontSize: 12.5, fontWeight: 700 }}>{d.count}</Typography>
-                <Typography sx={{ fontSize: 10, color: "text.secondary", textAlign: "center", lineHeight: 1.2 }}>
+                <Icon sx={{ fontSize: 15, color: d.color }} />
+                <Typography sx={{ fontSize: 12, fontWeight: 700 }}>{d.count}</Typography>
+                <Typography sx={{ fontSize: 9.5, color: "text.secondary", textAlign: "center", lineHeight: 1.2 }}>
                   {d.short}
                 </Typography>
               </Stack>

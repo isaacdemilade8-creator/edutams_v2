@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
 :root {
-  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #0f172a;
@@ -25,6 +27,7 @@ body,
 body {
   min-height: 100vh;
   background: #f3f6fb;
+  font-family: "Open Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 button,
@@ -32,6 +35,27 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+span,
+p,
+div,
+label,
+strong,
+small,
+li,
+a,
+textarea,
+input,
+select {
+  font-family: inherit;
 }
 
 img,

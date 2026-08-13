@@ -59,27 +59,33 @@ export default function RecentClassActivity() {
     <Box
       sx={{
         bgcolor: "#fff",
-        border: "1px solid",
-        borderColor: "grey.200",
+        border: "1.5px solid",
+        borderColor: "#e9d5ff",
         borderRadius: 3,
-        p: 2.5,
+        p: 2,
         height: "100%",
+        minHeight: 310,
+        transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
+        "&:hover": {
+          transform: "translateY(-2px)",
+          boxShadow: "0 8px 18px rgba(15, 23, 42, 0.05)",
+        },
       }}
     >
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1.5 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: 15, letterSpacing: -0.2 }}>Recent Class Activity</Typography>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1.25 }}>
+        <Typography sx={{ fontWeight: 800, fontSize: 14.5, letterSpacing: -0.2 }}>Recent Class Activity</Typography>
         <Typography
-          sx={{ fontSize: 12.5, fontWeight: 600, color: "primary.main", cursor: "pointer" }}
+          sx={{ fontSize: 12, fontWeight: 600, color: "primary.main", cursor: "pointer" }}
         >
           View all
         </Typography>
       </Stack>
 
-      <Stack divider={<Divider flexItem />} spacing={1.25}>
+      <Stack divider={<Divider flexItem />} spacing={1.1}>
         {activity.map((item) => {
           const Icon = item.icon;
           return (
-            <Stack key={item.id} direction="row" spacing={1.5} alignItems="flex-start" sx={{ pt: 0.15 }}>
+            <Stack key={item.id} direction="row" spacing={1.25} alignItems="flex-start" sx={{ pt: 0.1, transition: "transform 150ms ease", "&:hover": { transform: "translateX(2px)" } }}>
               <Box
                 sx={{
                   width: 30,
@@ -96,14 +102,14 @@ export default function RecentClassActivity() {
                 <Icon sx={{ fontSize: 16 }} />
               </Box>
               <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography sx={{ fontSize: 12.5, fontWeight: 600, lineHeight: 1.35 }}>
+                <Typography sx={{ fontSize: 12, fontWeight: 600, lineHeight: 1.3 }}>
                   {item.title}
                 </Typography>
-                <Typography sx={{ fontSize: 12, color: "text.secondary", lineHeight: 1.35 }}>
+                <Typography sx={{ fontSize: 11.5, color: "text.secondary", lineHeight: 1.3 }}>
                   {item.subtitle}
                 </Typography>
               </Box>
-              <Typography sx={{ fontSize: 11, color: "text.disabled", whiteSpace: "nowrap" }}>
+              <Typography sx={{ fontSize: 10.5, color: "text.disabled", whiteSpace: "nowrap" }}>
                 {item.time}
               </Typography>
             </Stack>

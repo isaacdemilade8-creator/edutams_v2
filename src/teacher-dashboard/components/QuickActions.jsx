@@ -89,11 +89,11 @@ export default function QuickActions() {
     >
       <Typography sx={{ fontWeight: 800, fontSize: 16, mb: 2, letterSpacing: -0.2 }}>Quick Actions</Typography>
 
-      <Grid container spacing={1.25}>
+      <Grid container spacing={0.9} columns={8}>
         {actions.map((action) => {
           const Icon = action.icon;
           return (
-            <Grid key={action.id} size={{ xs: 6, sm: 4, md: 3, lg: 2 }}>
+            <Grid key={action.id} size={{ xs: 6, sm: 4, md: 1, lg: 1 }}>
               <ButtonBase
                 onClick={() => {
                   // TODO: hook up navigation / handler for `${action.id}`
@@ -101,20 +101,20 @@ export default function QuickActions() {
                 sx={{
                   width: "100%",
                   height: "100%",
-                  minHeight: 110,
-                  p: 1.35,
-                  borderRadius: 2.25,
-                  border: "1px solid",
-                  borderColor: "grey.200",
-                  bgcolor: "#f8fafc",
-                  textAlign: "left",
+                  minHeight: 88,
+                  p: 1,
+                  borderRadius: 2,
+                  border: "1.5px solid",
+                  borderColor: action.color,
+                  bgcolor: `${action.color}14`,
+                  textAlign: "center",
                   justifyContent: "flex-start",
                   alignItems: "flex-start",
                   transition: "background-color 120ms ease, border-color 120ms ease",
-                  "&:hover": { bgcolor: "#f1f5f9", borderColor: "grey.300" },
+                  "&:hover": { bgcolor: `${action.color}1a`, borderColor: action.color },
                 }}
               >
-                <Stack spacing={1} alignItems="flex-start" sx={{ width: "100%" }}>
+                <Stack spacing={1} alignItems="center" sx={{ width: "100%" }}>
                   <Box
                     sx={{
                       width: 35,
@@ -130,10 +130,10 @@ export default function QuickActions() {
                     <Icon sx={{ fontSize: 20 }} />
                   </Box>
                   <Box sx={{ width: "100%" }}>
-                    <Typography sx={{ fontSize: 12.5, fontWeight: 700, lineHeight: 1.3 }}>
+                    <Typography sx={{ fontSize: 11.5, fontWeight: 700, lineHeight: 1.25 }}>
                       {action.label}
                     </Typography>
-                    <Typography sx={{ fontSize: 11, color: "text.secondary", lineHeight: 1.3, mt: 0.25 }}>
+                    <Typography sx={{ fontSize: 10.5, color: "text.secondary", lineHeight: 1.25, mt: 0.2 }}>
                       {action.sub}
                     </Typography>
                   </Box>

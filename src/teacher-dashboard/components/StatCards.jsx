@@ -81,9 +81,9 @@ export default function StatCards() {
           <Grid key={stat.id} size={{ xs: 6, sm: 4, md: 2 }}>
             <Box
               sx={{
-                bgcolor: "#fff",
-                border: "1px solid",
-                borderColor: "grey.200",
+                bgcolor: `${stat.color}14`,
+                border: "1.5px solid",
+                borderColor: stat.color,
                 borderRadius: 3,
                 p: 2,
                 height: "100%",

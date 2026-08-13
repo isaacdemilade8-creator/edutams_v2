@@ -127,9 +127,10 @@ function ClassCard({ cls }) {
       sx={{
         borderRadius: 3,
         height: "100%",
-        borderColor: "grey.200",
+        borderColor: cls.color,
+        borderWidth: 2,
         transition: "box-shadow 120ms ease, border-color 120ms ease",
-        "&:hover": { boxShadow: 2, borderColor: "grey.300" },
+        "&:hover": { boxShadow: 2, borderColor: cls.color },
       }}
     >
       <CardContent sx={{ p: 2.1, "&:last-child": { pb: 2.1 } }}>

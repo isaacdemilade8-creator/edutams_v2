@@ -33,10 +33,10 @@ function DashboardHeader() {
             py: 0.5,
           }}
         >
-          <Typography sx={{ fontSize: { xs: 26, md: 29 }, fontWeight: 800, letterSpacing: -0.6 }}>
+          <Typography sx={{ fontSize: { xs: 26, md: 29 }, fontWeight: 700, letterSpacing: -0.6, fontFamily: "Open Sans" }}>
             Good morning, {teacher.name}! 👋
           </Typography>
-          <Typography sx={{ fontSize: 13.5, color: "text.secondary", mt: 0.5 }}>
+          <Typography sx={{ fontSize: 13.5, color: "text.primary", mt: 0.5, fontFamily: "Open Sans" }}>
             You have {teacher.classesToday} classes today and {teacher.assignmentsPending}{" "}
             assignments pending.
           </Typography>
@@ -59,10 +59,10 @@ function DashboardHeader() {
           <Stack direction="row" spacing={2} alignItems="center" sx={{ width: "100%" }}>
             <FormatQuoteRoundedIcon sx={{ color: "primary.main", fontSize: 24, flexShrink: 0 }} />
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography sx={{ fontSize: 13, fontStyle: "italic", lineHeight: 1.45, color: "text.primary" }}>
+              <Typography sx={{ fontSize: 13, fontStyle: "italic", lineHeight: 1.45, color: "text.primary", fontFamily: "Open Sans" }}>
                 {quote.text}
               </Typography>
-              <Typography sx={{ fontSize: 12, color: "text.secondary", mt: 0.5 }}>
+              <Typography sx={{ fontSize: 12, color: "text.secondary", mt: 0.5, fontFamily: "Open Sans"  }}>
                 — {quote.author}
               </Typography>
             </Box>
@@ -90,7 +90,7 @@ export default function TeacherDashboard() {
   return (
     <Box sx={{ bgcolor: "#f3f6fb", minHeight: "100vh", p: { xs: 2, md: 2.5 }, display: "flex", justifyContent: "center" }}>
       <Box sx={{ width: "100%", maxWidth: 1460 }}>
-        <Stack spacing={2.25}>
+        <Stack spacing={2.25} sx={{ '@media (max-width: 600px)': { spacing: 1.75 } }}>
           <DashboardHeader />
 
           <ClassesOverview />
