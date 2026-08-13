@@ -62,8 +62,8 @@ export default function RecentClassActivity() {
         border: "1.5px solid",
         borderColor: "#e9d5ff",
         borderRadius: 3,
-        p: 2,
-        height: "100%",
+        p: 1.5,
+        height: "75%",
         minHeight: 310,
         transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
         "&:hover": {
@@ -72,8 +72,8 @@ export default function RecentClassActivity() {
         },
       }}
     >
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1.25 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: 14.5, letterSpacing: -0.2 }}>Recent Class Activity</Typography>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
+        <Typography sx={{ fontWeight: 700, fontSize: 14.5, letterSpacing: -0.2 }}>Recent Class Activity</Typography>
         <Typography
           sx={{ fontSize: 12, fontWeight: 600, color: "primary.main", cursor: "pointer" }}
         >
@@ -81,7 +81,7 @@ export default function RecentClassActivity() {
         </Typography>
       </Stack>
 
-      <Stack divider={<Divider flexItem />} spacing={1.1}>
+      <Stack divider={<Divider flexItem />} spacing={0.5}>
         {activity.map((item) => {
           const Icon = item.icon;
           return (

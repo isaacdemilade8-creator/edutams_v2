@@ -33,7 +33,7 @@ function ChartPanel({ title, right, children, accentColor }) {
         borderColor: accentColor || "grey.200",
         borderRadius: 3,
         p: 1.8,
-        height: "100%",
+        height: "75%",
         minHeight: 310,
         transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
         "&:hover": {
